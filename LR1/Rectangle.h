@@ -1,10 +1,7 @@
 #pragma once
 
 #include <iostream>
-
-struct Point {
-    int x, y;
-};
+#include "Point.h"
 
 class Rectangle {
 private:
@@ -13,15 +10,12 @@ private:
     int length;
 
 public:
-    // конструкторы
+  
     Rectangle();
 
     Rectangle(int x, int y, int height, int length);
 
     Rectangle(const Rectangle& rectangle);
-
-    // методы
-    void getX();
 
     Point getBottomLeft();
 
@@ -53,9 +47,9 @@ public:
 
     friend std::istream& operator>>(std::istream& stream, Rectangle& rec);
 
-    //вернуть объект
+    
     Rectangle operator+(const Rectangle& other);
-    //вернуть ссылку на объект
+
     Rectangle& operator+=(const Rectangle& other);
 
     Rectangle operator-(const Rectangle& other);
@@ -63,4 +57,6 @@ public:
     Rectangle& operator-=(const Rectangle& other);
 
 };
+
+
 
