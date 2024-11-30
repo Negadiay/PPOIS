@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "Rectangle.h"
 
-// Тестирование конструктора по умолчанию
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 TEST(RectangleTests, DefaultConstructor) {
     Rectangle r;
     EXPECT_EQ(r.getBottomLeft().x, 0);
@@ -10,7 +10,7 @@ TEST(RectangleTests, DefaultConstructor) {
     EXPECT_EQ(r.getTopRight().y, 1);
 }
 
-// Тестирование параметризованного конструктора
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїР°СЂР°РјРµС‚СЂРёР·РѕРІР°РЅРЅРѕРіРѕ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 TEST(RectangleTests, ParameterizedConstructor) {
     Rectangle r(2, 3, 4, 5);
     EXPECT_EQ(r.getBottomLeft().x, 2);
@@ -19,7 +19,7 @@ TEST(RectangleTests, ParameterizedConstructor) {
     EXPECT_EQ(r.getTopRight().y, 7); // 3 + 4
 }
 
-// Тестирование перемещения прямоугольника
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРµСЂРµРјРµС‰РµРЅРёСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°
 TEST(RectangleTests, SetNewLocation) {
     Rectangle r(2, 3, 4, 5);
     r.setNewLocation(10, 15);
@@ -27,21 +27,21 @@ TEST(RectangleTests, SetNewLocation) {
     EXPECT_EQ(r.getBottomLeft().y, 15);
 }
 
-// Тестирование изменения ширины
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РёР·РјРµРЅРµРЅРёСЏ С€РёСЂРёРЅС‹
 TEST(RectangleTests, ChangeWidth) {
     Rectangle r(0, 0, 4, 5);
     r.changeWidth(10);
-    EXPECT_EQ(r.getTopRight().y, 10); // Новая ширина (высота)
+    EXPECT_EQ(r.getTopRight().y, 10); // РќРѕРІР°СЏ С€РёСЂРёРЅР° (РІС‹СЃРѕС‚Р°)
 }
 
-// Тестирование изменения длины
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РёР·РјРµРЅРµРЅРёСЏ РґР»РёРЅС‹
 TEST(RectangleTests, ChangeLength) {
     Rectangle r(0, 0, 4, 5);
     r.changeLength(8);
-    EXPECT_EQ(r.getTopRight().x, 8); // Новая длина
+    EXPECT_EQ(r.getTopRight().x, 8); // РќРѕРІР°СЏ РґР»РёРЅР°
 }
 
-// Тестирование оператора сложения
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° СЃР»РѕР¶РµРЅРёСЏ
 TEST(RectangleTests, AdditionOperator) {
     Rectangle r1(0, 0, 4, 5);
     Rectangle r2(0, 0, 3, 6);
@@ -49,11 +49,11 @@ TEST(RectangleTests, AdditionOperator) {
 
     EXPECT_EQ(result.getBottomLeft().x, 0);
     EXPECT_EQ(result.getBottomLeft().y, 0);
-    EXPECT_GE(result.getTopRight().x, r1.getTopRight().x); // Увеличенная длина
-    EXPECT_GE(result.getTopRight().y, r1.getTopRight().y); // Увеличенная высота
+    EXPECT_GE(result.getTopRight().x, r1.getTopRight().x); // РЈРІРµР»РёС‡РµРЅРЅР°СЏ РґР»РёРЅР°
+    EXPECT_GE(result.getTopRight().y, r1.getTopRight().y); // РЈРІРµР»РёС‡РµРЅРЅР°СЏ РІС‹СЃРѕС‚Р°
 }
 
-// Тестирование оператора сравнения
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° СЃСЂР°РІРЅРµРЅРёСЏ
 TEST(RectangleTests, EqualityOperator) {
     Rectangle r1(0, 0, 4, 5);
     Rectangle r2(0, 0, 4, 5);
@@ -63,7 +63,7 @@ TEST(RectangleTests, EqualityOperator) {
     EXPECT_FALSE(r1 == r3);
 }
 
-// Тестирование оператора неравенства
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° РЅРµСЂР°РІРµРЅСЃС‚РІР°
 TEST(RectangleTests, InequalityOperator) {
     Rectangle r1(0, 0, 4, 5);
     Rectangle r2(0, 0, 3, 6);
@@ -71,23 +71,23 @@ TEST(RectangleTests, InequalityOperator) {
     EXPECT_TRUE(r1 != r2);
 }
 
-// Тестирование префиксного оператора увеличения
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїСЂРµС„РёРєСЃРЅРѕРіРѕ РѕРїРµСЂР°С‚РѕСЂР° СѓРІРµР»РёС‡РµРЅРёСЏ
 TEST(RectangleTests, PrefixIncrement) {
     Rectangle r(0, 0, 4, 5);
     ++r;
-    EXPECT_EQ(r.getTopRight().x, 6); // Длина увеличена
-    EXPECT_EQ(r.getTopRight().y, 5); // Высота увеличена
+    EXPECT_EQ(r.getTopRight().x, 6); // Р”Р»РёРЅР° СѓРІРµР»РёС‡РµРЅР°
+    EXPECT_EQ(r.getTopRight().y, 5); // Р’С‹СЃРѕС‚Р° СѓРІРµР»РёС‡РµРЅР°
 }
 
-// Тестирование постфиксного оператора уменьшения
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РїРѕСЃС‚С„РёРєСЃРЅРѕРіРѕ РѕРїРµСЂР°С‚РѕСЂР° СѓРјРµРЅСЊС€РµРЅРёСЏ
 TEST(RectangleTests, PostfixDecrement) {
     Rectangle r(0, 0, 4, 5);
     r--;
-    EXPECT_EQ(r.getTopRight().x, 4); // Длина уменьшена
-    EXPECT_EQ(r.getTopRight().y, 3); // Высота уменьшена
+    EXPECT_EQ(r.getTopRight().x, 4); // Р”Р»РёРЅР° СѓРјРµРЅСЊС€РµРЅР°
+    EXPECT_EQ(r.getTopRight().y, 3); // Р’С‹СЃРѕС‚Р° СѓРјРµРЅСЊС€РµРЅР°
 }
 
-// Тестирование ввода и вывода
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РІРІРѕРґР° Рё РІС‹РІРѕРґР°
 TEST(RectangleTests, InputOutputOperators) {
     Rectangle r;
     std::istringstream input("1 2 3 4");
@@ -99,7 +99,7 @@ TEST(RectangleTests, InputOutputOperators) {
     EXPECT_EQ(r.getTopRight().y, 5); // 2 + 3
 }
 
-// Тестирование оператора вычитания
+// РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РѕРїРµСЂР°С‚РѕСЂР° РІС‹С‡РёС‚Р°РЅРёСЏ
 TEST(RectangleTests, SubtractionOperator) {
     Rectangle r1(0, 0, 4, 5);
     Rectangle r2(0, 0, 2, 3);
@@ -107,6 +107,6 @@ TEST(RectangleTests, SubtractionOperator) {
 
     EXPECT_EQ(result.getBottomLeft().x, 0);
     EXPECT_EQ(result.getBottomLeft().y, 0);
-    EXPECT_EQ(result.getTopRight().x, 5); // Минимальная длина
-    EXPECT_EQ(result.getTopRight().y, 4); // Минимальная высота
+    EXPECT_EQ(result.getTopRight().x, 5); // РњРёРЅРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР°
+    EXPECT_EQ(result.getTopRight().y, 4); // РњРёРЅРёРјР°Р»СЊРЅР°СЏ РІС‹СЃРѕС‚Р°
 }
